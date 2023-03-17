@@ -13,15 +13,10 @@ def generate_random_string(format):
         return ''.join(random.choices(string.ascii_uppercase + string.digits, k=5)) + '-' + \
                ''.join(random.choices(string.ascii_uppercase + string.digits, k=5)) + '-' + \
                ''.join(random.choices(string.ascii_uppercase + string.digits, k=5)) + '-' + \
-               ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))
-    elif format == 3:
-        return ''.join(random.choices(string.ascii_uppercase + string.digits, k=5)) + '-' + \
-               ''.join(random.choices(string.ascii_uppercase + string.digits, k=5)) + '-' + \
-               ''.join(random.choices(string.ascii_uppercase + string.digits, k=5)) + '-' + \
                ''.join(random.choices(string.ascii_uppercase + string.digits, k=5)) + '-' + \
                ''.join(random.choices(string.ascii_uppercase + string.digits, k=5))
 
-# Prompt the user to select a string format (5-5-5/ 5-5-5-5/ 5-5-5-5-5)
+# Prompt the user to select a string format (5-5-5/5-5-5-5-5)
 
 
 
@@ -37,12 +32,12 @@ print("                                            |___/                     ")
 
 
 while True:
-    format = input("Select a string format:\n1. XXXXX-XXXXX-XXXXX\n2. XXXXX-XXXXX-XXXXX-XXXXX\n3. XXXXX-XXXXX-XXXXX-XXXXX-XXXXX\n")
-    if format.isdigit() and int(format) in [1, 2, 3]:
+    format = input("Select a string format:\n1. XXXXX-XXXXX-XXXXX \n2. XXXXX-XXXXX-XXXXX-XXXXX-XXXXX\n")
+    if format.isdigit() and int(format) in [1, 2]:
         format = int(format)
         break
     else:
-        print("Invalid input. Please enter a number from 1 to 3.")
+        print("Invalid input. Please enter a number from 1 to 2.")
         continue
 
 # Get the number of output files already generated
